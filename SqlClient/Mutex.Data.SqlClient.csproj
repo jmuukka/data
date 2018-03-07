@@ -13,7 +13,7 @@
     <NoWarn />
     <WarningsAsErrors />
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <Description>An SqlClient implementation of Mutex.Data.Core for SQL Server of Mutex.Data.Core. Reference Mutex.Data.SqlClient only in your application(s). Reference Mutex.Data.Core in your libraries.
+    <Description>An SqlClient implementation of Mutex.Data.Client for SQL Server. Reference Mutex.Data.SqlClient only in your application(s).
 
 The assembly is signed and CLS compliant.</Description>
     <PackageProjectUrl>https://github.com/jmuukka/data</PackageProjectUrl>

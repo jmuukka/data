@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;net40;net35;netstandard2.0</TargetFrameworks>
+    <RootNamespace>Mutex.Data</RootNamespace>
+    <PackageId>Mutex.Data</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jarmo Muukka, Mutex Oy</Authors>
+    <Company>Mutex Oy</Company>
+    <Product>Mutex Framework</Product>
+    <Copyright>Copyright © Mutex Oy 2018</Copyright>
+    <PackageTags>ADO.NET System.Data database Micro-ORM</PackageTags>
+    <AssemblyName>Mutex.Data</AssemblyName>
+    <Description>A default implementation of Mutex.Data.Core. This package is database independent. Reference Mutex.Data only in your application(s). Reference Mutex.Data.Core in your libraries.
+
+The assembly is signed and CLS compliant.</Description>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>mutex.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn />
+    <PackageProjectUrl>https://github.com/jmuukka/data</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/jmuukka/data/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Mutex.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\Mutex.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <DocumentationFile>bin\Release\net40\Mutex.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net35|AnyCPU'">
+    <DocumentationFile>bin\Release\net35\Mutex.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="Mutex.Data.Client" Version="1.0.0" />
+    <PackageReference Include="Mutex.Data.Core" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'!='Release'">
+    <ProjectReference Include="..\Client\Mutex.Data.Client.csproj" />
+    <ProjectReference Include="..\Core\Mutex.Data.Core.csproj" />
+  </ItemGroup>
+
+</Project>

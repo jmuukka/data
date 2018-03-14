@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;net40;net35;netstandard2.0</TargetFrameworks>
+    <Version>1.0.0</Version>
+    <Authors>Jarmo Muukka, Mutex Oy</Authors>
+    <Company>Mutex Oy</Company>
+    <Product>Mutex Framework</Product>
+    <PackageTags>ADO.NET System.Data database SQLServer SqlClient Micro-ORM</PackageTags>
+    <Copyright>Copyright © Mutex Oy 2018</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>mutex.pfx</AssemblyOriginatorKeyFile>
+    <NoWarn />
+    <WarningsAsErrors />
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>An SqlClient implementation of Mutex.Data.Client for SQL Server. Reference Mutex.Data.SqlClient only in your application(s).
+
+The assembly is signed and CLS compliant.</Description>
+    <PackageProjectUrl>https://github.com/jmuukka/data</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/jmuukka/data/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Mutex.Data.SqlClient.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\Mutex.Data.SqlClient.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <DocumentationFile>bin\Release\net40\Mutex.Data.SqlClient.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net35|AnyCPU'">
+    <DocumentationFile>bin\Release\net35\Mutex.Data.SqlClient.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)|$(Platform)'=='netstandard2.0|AnyCPU'">
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="Mutex.Data.Client" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'!='Release'">
+    <ProjectReference Include="..\Client\Mutex.Data.Client.csproj" />
+  </ItemGroup>
+
+</Project>
